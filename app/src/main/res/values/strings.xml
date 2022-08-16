@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tuttur Example</string>
+    <string name="rating_format">Rating: %.2f</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_movies"
+        android:icon="@drawable/ic_movie_24"
+        android:title="Movies"/>
+    <item
+        android:id="@+id/item_posts"
+        android:icon="@drawable/ic_explore_24"
+        android:title="Posts"/>
+    <item
+        android:id="@+id/item_countries"
+        android:icon="@drawable/ic_flag_24"
+        android:title="Countries"/>
+</menu>

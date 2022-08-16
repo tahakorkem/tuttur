@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="country"
+            type="com.tahakorkem.tuttur.Country" />
+    </data>
+
+    <LinearLayout
+        android:paddingHorizontal="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="@drawable/with_bottom_divider">
+
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{country.emoji, default = "🇺🇸"}' />
+
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:text='@{country.name, default = "Afghanistan" }'
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingVertical="8dp"/>
+
+    </LinearLayout>
+
+</layout>
