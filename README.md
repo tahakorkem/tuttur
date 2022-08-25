@@ -1,7 +1,7 @@
 # tuttur
 Tuttur (which means `bind [verb]`  in Turkish) is lighweight library that facilitates the use of DataBinding with Activity, Fragment, Dialog, BottomSheet, and especiallly ListAdapter. Currently, tuttur works with only DataBinding. So, if you use ViewBinding or Compose, this library is useless for you.
 
-Tuttur allows you to code simpler while using DataBinding and also reduces some boilerplates for you. The main logic is simple: Make all your Activity, Fragment, Dialog, BottomSheet and ListAdapter inherit from its Base version. For instance, you have an Activity. Don't inherit from AppCompatActivity, inherit from BaseActivity instead and specify suitable ViewDataBinding class and its layout resource id. Anymore, you have "binding" property in the Activity without needing any implementation else.
+Tuttur allows you to code simpler while using DataBinding and also reduces some boilerplates for you. The main idea is simple: Make all your Activity, Fragment, Dialog, BottomSheet and ListAdapter inherit from its Base version. For instance, you have an Activity. Don't inherit from AppCompatActivity, inherit from BaseActivity instead and specify suitable ViewDataBinding class and its layout resource id. Anymore, you have "binding" property in the Activity without needing any implementation else.
 
 * [Installation](#installation)
 * [Demo app](#demo-app)
@@ -65,7 +65,7 @@ Remember that every class you need starts with `Base`, such as `BaseActivity`, `
 
 ### Activity
 
-Your activity must inherit from `BaseActivity` and you must specify your ViewDataBinding class within angel brackets and pass layout resource id in constructor. It is important to note that you must use matching ViewDataBinding class and layout resource id.
+Your activity must inherit from `BaseActivity` and you must specify your ViewDataBinding class within angle brackets and pass layout resource id in constructor. It is important to note that you must use matching ViewDataBinding class and layout resource id.
 
 ```kotlin
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
@@ -234,9 +234,8 @@ object Footer : PostItem {
 For instance, you have four view types in your ListAdapter for `Post.Text`, `Post.Image`, `SectionHeader`, and `Footer` and theirs ViewDataBinding classes. You must use `Base4ViewListAdapter` since you have four view types. Generic type parameters must be in that order: Parent model class (`PostItem` in this particular case), 1st model class, 1st ViewDataBinding class, 2nd model class, 2nd ViewDataBinding class, etc. You must also pass layout resource ids in constructor in form of `Bindable` for example as `Bindable(Post.Image::class, R.layout.list_item_text_post)` or `bind(R.layout.list_item_text_post)` in the shorthand form.
 
 ```kotlin
-class PostAdapter(
-    private val onClick: (Post) -> Unit,
-) : Base4ViewListAdapter<PostItem, Post.Text, ListItemTextPostBinding, Post.Image, ListItemImagePostBinding, SectionHeader, ListItemSectionHeaderBinding, Footer, ListItemFooterBinding>(
+class PostAdapter
+: Base4ViewListAdapter<PostItem, Post.Text, ListItemTextPostBinding, Post.Image, ListItemImagePostBinding, SectionHeader, ListItemSectionHeaderBinding, Footer, ListItemFooterBinding>(
     bind(R.layout.list_item_text_post),
     bind(R.layout.list_item_image_post),
     bind(R.layout.list_item_section_header),
