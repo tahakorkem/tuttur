@@ -80,7 +80,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
 ### Fragment
 
-Your fragment must inherit from `BaseFragment` and you must specify your ViewDataBinding class within angel brackets and pass layout resource id in constructor.
+Your fragment must inherit from `BaseFragment` and you must specify your ViewDataBinding class within angle brackets and pass layout resource id in constructor.
 
 ```kotlin
 class MovieListFragment : BaseFragment<FragmentMovieListBinding>(R.layout.fragment_movie_list) {
@@ -94,7 +94,7 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(R.layout.fragme
 
 ### Dialog
 
-Your dialog must inherit from `BaseDialogFragment` and you must specify your ViewDataBinding class within angel brackets and pass layout resource id in constructor.
+Your dialog must inherit from `BaseDialogFragment` and you must specify your ViewDataBinding class within angle brackets and pass layout resource id in constructor.
 
 ```kotlin
 class PostDetailDialog : BaseDialogFragment<DialogPostDetailBinding>(R.layout.dialog_post_detail) {
@@ -114,7 +114,7 @@ class PostDetailDialog : BaseDialogFragment<DialogPostDetailBinding>(R.layout.di
 
 ### BottomSheet
 
-Your bottom sheet must inherit from `BaseBottomSheetDialogFragment` and you must specify your ViewDataBinding class within angel brackets and pass layout resource id in constructor.
+Your bottom sheet must inherit from `BaseBottomSheetDialogFragment` and you must specify your ViewDataBinding class within angle brackets and pass layout resource id in constructor.
 
 ```kotlin
 class MovieBottomSheet : BaseBottomSheetDialogFragment<BottomSheetMovieBinding>(R.layout.bottom_sheet_movie) {
@@ -131,7 +131,7 @@ class MovieBottomSheet : BaseBottomSheetDialogFragment<BottomSheetMovieBinding>(
 
 ### ListAdapter
 
-Primarily, your model classes you use in ListAdapter must inherit from `Identificable` that has `id: Any` property, `equals()` and `hashCode()` member functions. This is required to identificate each item in the list and detect value changes. Remember that using Kotlin `data class`es let you automatically implement `equals()` and `hashCode()` functions.
+Primarily, your model classes you use in ListAdapter must inherit from `Identifiable` that has `id: Any` property, `equals()` and `hashCode()` member functions. This is required to identificate each item in the list and detect value changes. Remember that using Kotlin `data class`es let you automatically implement `equals()` and `hashCode()` functions.
 
 ```kotlin
 data class Movie(
