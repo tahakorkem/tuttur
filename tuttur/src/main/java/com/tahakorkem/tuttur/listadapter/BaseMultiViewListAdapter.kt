@@ -18,7 +18,7 @@ abstract class BaseMultiViewListAdapter<I : Identifiable>
 
     protected abstract val bindables: List<Bindable<out I>>
     private val bindableIndicesMap by lazy {
-        bindables.mapIndexed { i, item -> item.clazz to i }.toMap()
+        bindables.toDistinctMapIndexed { i, item -> item.clazz to i }
     }
 
     final override fun onCreateViewHolder(
@@ -64,4 +64,16 @@ abstract class BaseMultiViewListAdapter<I : Identifiable>
 
     open fun ViewDataBinding.onCreate(viewType: Int) = Unit
 
+}
+
+private inline fun <T, K, V> Iterable<T>.toDistinctMapIndexed(block: (index: Int, item: T) -> Pair<K, V>): Map<K, V> {
+    val map = mutableMapOf<K, V>()
+    for ((i, item) in this.withIndex()) {
+        val (key, value) = block(i, item)
+        if (key in map) {
+            error("Key $key is already in the map. Duplicated keys are not allowed.")
+        }
+        map[key] = value
+    }
+    return map
 }
