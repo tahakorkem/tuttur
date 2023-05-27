@@ -3,6 +3,11 @@ Tuttur (which means `bind [verb]`  in Turkish) is lighweight library that facili
 
 Tuttur allows you to code simpler while using DataBinding and also reduces some boilerplates for you. The main idea is simple: Make all your Activity, Fragment, Dialog, BottomSheet and ListAdapter inherit from its Base version. For instance, you have an Activity. Don't inherit from AppCompatActivity, inherit from BaseActivity instead and specify suitable ViewDataBinding class and its layout resource id. Anymore, you have "binding" property in the Activity without needing any implementation else.
 
+## To-do
+- Support for ViewBinding
+- Separation of ViewBinding and DataBinding into two different modules
+
+## Guide
 * [Installation](#installation)
 * [Demo app](#demo-app)
 * [Usage](#usage)
