@@ -38,7 +38,7 @@ allprojects {
 ##### 2) Add this dependency in your app build.gradle:
 
 ```gradle
-implementation 'com.github.tahakorkem:tuttur:0.1.0'
+implementation 'com.github.tahakorkem:tuttur:0.1.1'
 ```
 
 ### Note:
